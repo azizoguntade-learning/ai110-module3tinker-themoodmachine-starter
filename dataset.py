@@ -50,6 +50,12 @@ SAMPLE_POSTS = [
     "This is fine",
     "So excited for the weekend",
     "I am not happy about this",
+    "I lowkey don't want to watch this show",
+    "I got kicked out of the CodePath meeting 😢",
+    "I absolutely LOVE!!!! My job! So much!!!",
+    "I am optimistic about AI.",
+    "Today is raining",
+
 ]
 
 # Human labels for each post above.
@@ -65,7 +71,13 @@ TRUE_LABELS = [
     "neutral",   # "This is fine"
     "positive",  # "So excited for the weekend"
     "negative",  # "I am not happy about this"
+    "negative"   # "I lowkey don't want to watch this show"
+    "negative"   # I got kicked out of the CodePath meeting 😢
+    "negative"   # "I absolutely LOVE!!!! My job! So much!!!"
+    "positive"   # "I am optimistic about AI."
+    "neutral"   # "Today is raining"
 ]
+
 
 # TODO: Add 5-10 more posts and labels.
 #
@@ -92,3 +104,5 @@ TRUE_LABELS = [
 #
 # Remember to keep them aligned:
 #   len(SAMPLE_POSTS) == len(TRUE_LABELS)
+
+

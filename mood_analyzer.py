@@ -9,6 +9,9 @@ This class starts with very simple logic:
   - Convert that score into a mood label
 """
 
+
+# Print the tokens to confirm your code behaves as expected.
+
 from typing import List, Dict, Tuple, Optional
 
 from dataset import POSITIVE_WORDS, NEGATIVE_WORDS
@@ -151,3 +154,20 @@ class MoodAnalyzer:
             f"(positive: {positive_hits or '[]'}, "
             f"negative: {negative_hits or '[]'})"
         )
+
+
+if __name__ == "__main__":
+    # Print the tokens to confirm preprocess() behaves as expected.
+    analyzer = MoodAnalyzer()
+
+    samples = [
+        "I love this class so much",
+        "Today was a TERRIBLE day!!!",
+        "Feeling tired but kind of hopeful",
+        "So excited for the weekend 😢",
+    ]
+
+    print("=== preprocess() token check ===")
+    for text in samples:
+        tokens = analyzer.preprocess(text)
+        print(f"{text!r} -> {tokens}")
