@@ -38,6 +38,17 @@ NEGATIVE_WORDS = [
     "boring",
 ]
 
+# Words that flip the sentiment of the word right after them,
+# e.g. "not happy" -> negative, "not bad" -> positive.
+NEGATION_WORDS = [
+    "not",
+    "never",
+    "no",
+    "cant",
+    "cannot",
+    "dont",
+]
+
 # ---------------------------------------------------------------------
 # Starter labeled dataset
 # ---------------------------------------------------------------------
