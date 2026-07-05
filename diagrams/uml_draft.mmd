@@ -1,0 +1,49 @@
+classDiagram
+    %% Relationships
+    Owner "1" *-- "*" Pet : owns
+    Pet "1" *-- "*" Task : assigned
+    Scheduler "1" o-- "*" Pet : manages
+    Scheduler "1" o-- "*" Task : schedules
+
+    %% Classes
+    class Task {
+        +int id
+        +String title
+        +String description
+        +int duration_mins
+        +String priority
+        +Datetime due_time
+        +String frequency
+        +Boolean is_completed
+        +mark_complete() Boolean
+        +update_priority(String new_priority) void
+        +reschedule(Datetime new_time) void
+    }
+
+    class Pet {
+        +String name
+        +String species
+        +int age
+        +List~Task~ tasks
+        +add_task(Task task) void
+        +remove_task(int task_id) void
+        +get_pending_tasks() List~Task~
+    }
+
+    class Owner {
+        +String name
+        +int available_minutes
+        +List~Pet~ pets
+        +add_pet(Pet pet) void
+        +set_availability(int minutes) void
+    }
+
+    class Scheduler {
+        +List~Pet~ pets
+        +List~Task~ schedule
+        +add_pet(Pet pet) void
+        +build_schedule() List~Task~
+        +get_upcoming_tasks() List~Task~
+        +check_conflicts(Task new_task) Boolean
+        +generate_recurring_tasks() void
+    }
